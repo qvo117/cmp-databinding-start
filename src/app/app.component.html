@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <app-cockpit
     (serverCreated)="onServerAdded($event)"
     (bpCreated)="onBlueprintAdded($event)"
@@ -20,5 +20,18 @@
         </p>
       </app-server-element>
     </div>
+  </div>
+</div> -->
+<div class="row">
+  <div class="col-xs-12">
+    <app-game-control (gameStarted)="onNumberFired($event)"></app-game-control>
+    <app-odd
+      *ngFor="let oddNumber of oddNumbers"
+      [number]="oddNumber"
+    ></app-odd>
+    <app-even
+      *ngFor="let evenNumber of evenNumbers"
+      [number]="evenNumber"
+    ></app-even>
   </div>
 </div>

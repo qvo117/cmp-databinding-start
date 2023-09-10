@@ -6,29 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  serverElements = [{ type: 'server', name: 'Testserver', content: 'test' }];
+  // serverElements = [{ type: 'server', name: 'Testserver', content: 'test' }];
+  // onServerAdded(serverData: { serverName: string; serverContent: string }) {
+  //   this.serverElements.push({
+  //     type: 'server',
+  //     name: serverData.serverName,
+  //     content: serverData.serverContent,
+  //   });
+  // }
+  // onBlueprintAdded(blueprintData: {
+  //   serverName: string;
+  //   serverContent: string;
+  // }) {
+  //   this.serverElements.push({
+  //     type: 'blueprint',
+  //     name: blueprintData.serverName,
+  //     content: blueprintData.serverContent,
+  //   });
+  // }
+  // //Change the name of the first element
+  // onChangeFirst() {
+  //   this.serverElements[0].name = 'Changed!';
+  // }
 
-  onServerAdded(serverData: { serverName: string; serverContent: string }) {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent,
-    });
-  }
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
 
-  onBlueprintAdded(blueprintData: {
-    serverName: string;
-    serverContent: string;
-  }) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: blueprintData.serverName,
-      content: blueprintData.serverContent,
-    });
-  }
-
-  //Change the name of the first element
-  onChangeFirst() {
-    this.serverElements[0].name = 'Changed!';
+  onNumberFired(number: number) {
+    number % 2 === 0
+      ? this.evenNumbers.push(number)
+      : this.oddNumbers.push(number);
   }
 }
